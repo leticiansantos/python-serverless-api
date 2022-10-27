@@ -1,0 +1,34 @@
+service: python-serverless-api
+frameworkVersion: '3'
+
+plugins:
+  - serverless-python-requirements
+  - serverless-plugin-datadog
+
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
+  datadog:
+    addExtension: true
+    apiKey: <YOUR DATADOG API KEY> # Add your Datadog API key
+
+provider:
+  name: aws
+  runtime: python3.8
+  profile: <YOUR AWS PROFILE>  # Add your profile name
+  region: us-east-1
+  tags:
+    datadog: true
+    owner: <YOUR NAME> # Add your name
+  environment:
+    DD_ENV: test
+    DD_SERVICE: python_serverless_api
+    DD_VERSION: '1.0'
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - httpApi:
+          path: /
+          method: get
