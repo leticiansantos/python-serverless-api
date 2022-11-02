@@ -1,6 +1,6 @@
 # Python API trace using the Datadog Lambda Library
 
-This project is a simple HTTP API with Python running on AWS Lambda and API Gateway using the Serverless Framework. Also integrates the Datadog the APM spans.
+This project is a simple HTTP API with Python running on AWS Lambda and API Gateway using the Serverless Framework. Also integrates the Datadog APM spans.
 
 You can find the orginal template in the [Serverless Examples Repo](https://github.com/serverless/examples/tree/v3/aws-python-http-api). This project was based on a [MacSantos](https://github.com/mecsantos)' project.
 
